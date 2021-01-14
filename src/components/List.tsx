@@ -11,7 +11,6 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 
 export const List = ({passPokemon} : {passPokemon: (pokemon: object) => void}) => {
     const [pokemons, setPokemons] = useState<any[]>([]);
-
     interface Pokemon {
         name: string,
         url: string
@@ -36,7 +35,6 @@ export const List = ({passPokemon} : {passPokemon: (pokemon: object) => void}) =
         fetchData();
 
     }, [setPokemons]);
-
     return (
         <Container>
             <GridList cols={4}>
@@ -45,11 +43,13 @@ export const List = ({passPokemon} : {passPokemon: (pokemon: object) => void}) =
                     return (
                     <GridListTile key={index}>
                         <img src={pokemon.image} alt={pokemon.name} />
-                        <Link to={{
-                            pathname: "/pokemon/" + index,
-                            state: {pokemon}
-                        }} pokemon={pokemon} index={index}>
-                            <GridListTileBar title={pokemon.name} onClick={() => passPokemon(pokemon)} />
+                        <Link
+                        to={{
+                            pathname: "/pokemon/" + index
+                        }}>
+                            <div onClick={() => passPokemon(pokemon)}>
+                                <GridListTileBar title={pokemon.name}/>
+                            </div>
                         </Link>
                     </GridListTile>
                 )})}

@@ -4,15 +4,26 @@ import Container from '@material-ui/core/Container';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
+
 interface Pokemon {
     name: string;
     image: string;
-    stats: Array
+    stats: Array<
+        {
+            base_stat: string,
+            stat: {
+                name: string
+            }
+        }
+    >
 };
 
+// const maxWidth: string = "md";
+
 export const FullPokemon = ({pokemon} : {pokemon: Pokemon}) => {
+    console.log(pokemon);
     return (
-        <Container maxWidth={'md'} align='center'>
+        <Container  maxWidth='md'>
             <img style={{height: '45vh', width: '45vw'}} src={pokemon.image} alt={pokemon.name} />
             <Typography variant='h1'>{pokemon.name}</Typography>
             <GridList cols={2}>
