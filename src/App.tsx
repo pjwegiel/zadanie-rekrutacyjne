@@ -1,19 +1,12 @@
+/* eslint-disable react/jsx-indent */
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { Layout } from './components/Layout';
 
-import {withRouter} from 'react-router';
-
-import {Layout} from './components/Layout';
-
-
-function App() {
-  return (
+const App = () => (
     <BrowserRouter>
-      <Layout />
-      {/* <Navbar />
-      <List /> */}
+        <Layout />
     </BrowserRouter>
-  );
-}
-
+);
 export default withRouter(App);

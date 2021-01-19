@@ -1,6 +1,14 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "fontsource-roboto";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
